@@ -26,7 +26,7 @@ export default function Start() {
         <Link to={"/login"}> <button>Log In</button></Link>
 
         <p>Sneak Peak with no strings attached?</p>
-        <Link to={"/browse"}><button>Continue without Account </button></Link>
+        <Link to={"/allgames"}><button>Continue without Account </button></Link>
         </div>
     </div>
     )

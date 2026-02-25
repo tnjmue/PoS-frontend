@@ -3,6 +3,7 @@
 // green heart icon: <a href="https://www.flaticon.com/free-icons/pixel" title="pixel icons">Pixel icons created by meaicon - Flaticon</a>
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 export default function BrowseGames() {
     
@@ -13,7 +14,8 @@ export default function BrowseGames() {
     <div>
     <h1 className="chocolate-font">Browse Games</h1>
     </div>
-
+    
+    <Footer />
     </>
     )
 }

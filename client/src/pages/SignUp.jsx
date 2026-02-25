@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Header from '../components/Header';
 import API from '../api';
 
 export default function SignUp(props) {
@@ -22,7 +23,12 @@ export default function SignUp(props) {
     
     return (
     <div> 
+
+        <Header />
+        <hr />
+
         <h1 className="header-font">Sign Up</h1>
+
         <div className="form-page">
             <form className="form chocolate-font" onSubmit={handleSignUpSubmit}>
                 <label>name:</label>
@@ -56,12 +62,19 @@ export default function SignUp(props) {
             </form>
 
             { errorMessage && <p className="error-message">{errorMessage}</p> }
- 
-            <p>Already have account?</p>
-            <span className="bottom-buttons">
-            <Link to={"/login"}> <button>Log In</button></Link>
-            <Link to={"/browse"}><button>Continue without Account </button></Link>
+
+            <div className="bottom-buttons-signup">
+
+            <span>
+                <p>Already have an account?</p>
+                <Link to={"/login"}> <button>Log In</button></Link>
             </span>
+
+            <span>
+                <p>Don't want to commit?</p>
+                <Link to={"/allgames"}><button>Continue without Account </button></Link>
+            </span>
+            </div>
             
         </div>
     </div>

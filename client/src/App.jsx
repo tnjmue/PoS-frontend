@@ -9,10 +9,13 @@ import LogIn from './pages/LogIn';
 import BrowseGames from './pages/BrowseGames';
 import GameDetails from './pages/GameDetails';
 import MyGames from './pages/MyGames';
+import UserGameDetails from './pages/UserGameDetails';
+import EditUserGame from './pages/EditUserGame';
 import UserAccount from './pages/UserAccount';
 import ErrorPage from './pages/ErrorPage';
 import AllGames from './pages/AllGames';
 import IsPrivate from './components/IsPrivate';
+
 
 import './App.css'
 
@@ -25,18 +28,25 @@ function App() {
     <>
     <main style={{ backgroundImage: `url(${bgImage})` }}>
 
-        <Routes>
-        <Route path="/" element={<Start />} /> 
-        <Route path="/browse" element={<BrowseGames />} />
-        <Route path="/browse/:gameId" element={<GameDetails />} /> 
-        <Route path="/mygames" element={ <IsPrivate> <MyGames /> </IsPrivate> } /> 
-        <Route path="/account" element={ <IsPrivate> <UserAccount /> </IsPrivate> } /> 
-        <Route path="*" element={<ErrorPage />} /> 
-        <Route path="/allgames" element={<AllGames />} />
+      <div className="content-container">
 
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Start />} /> 
+          <Route path="/browse" element={<BrowseGames />} />
+          <Route path="/browse/:gameId" element={<GameDetails />} /> 
+          <Route path="/mygames" element={ <IsPrivate> <MyGames /> </IsPrivate> } />
+          <Route path="/mygames/:userGameId" element={ <IsPrivate> <UserGameDetails /> </IsPrivate> } />
+          <Route path="/edit/:userGameId" element={ <IsPrivate> <EditUserGame /> </IsPrivate> } />  
+          <Route path="/account" element={ <IsPrivate> <UserAccount /> </IsPrivate> } /> 
+          <Route path="*" element={<ErrorPage />} /> 
+          <Route path="/allgames" element={<AllGames />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+        </Routes>
+
+        
+
+      </div>
 
     </main>
 

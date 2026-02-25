@@ -8,7 +8,7 @@ export default function Header() {
             <img src={logo} alt="" />
             <h1>Pile of Shame</h1>
         </div>
-        <hr />
+        
         </div>
     )
 }

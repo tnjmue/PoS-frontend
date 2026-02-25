@@ -1,5 +1,5 @@
 :root {
-  --dark-grey: rgb(86, 86, 86);
+  --dark-grey: rgb(116, 127, 167);
   --light-grey: rgb(160, 169, 201);
   --off-white: rgb(190, 201, 243);
   --bright-pink: rgb(227, 62, 144);
@@ -27,16 +27,21 @@ html, body {
 }
 
 #root {
-  /* max-width: 1280px; */
   min-height: 100%;
 }
 
 main {
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
-background-position: center;
-min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;   
+  padding: 0 2rem;
 }
 
 button {
@@ -108,13 +113,14 @@ button:hover {
 
 .header-box {
   background-color: black;
-  hr {
+}
+
+ hr {
   border: none;
   border-top: 2px solid white;
   width: 100%;
   margin: 0;
   }
-}
 
 .header {
   display: flex;
@@ -152,7 +158,8 @@ button:hover {
   display: flex;
   background-color: black;
   color: white;
-  border-bottom: 2px solid white;
+  border: 2px solid white;
+  padding-left: 1rem;
 }
 
 .navbar-links {
@@ -186,6 +193,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem;
   p {
     padding: 0.25rem 0.5rem;
     font-weight: bolder;
@@ -211,22 +219,24 @@ button:hover {
   button:focus {
   color: var(--ultramarine);
 }
+textarea {
+  background-color: var(--off-white);
+  border-radius: 10px;
+  width: 80%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
 }
 
-.bottom-buttons {
+.bottom-buttons-login {
   display: flex;
   gap: 1rem;
-  button {
-    background-color: var(--sky-blue);
-    color: var(--bright-pink);
-  }
-  button:hover {
-    box-shadow: 0 0 5px var(--bright-pink);
-  }
-  button:focus {
-    
-    color: var(--darker-pink);
-  }
+}
+
+.bottom-buttons-signup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .all-games {
@@ -239,6 +249,9 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  background-color: var(--dark-grey);
+  color: black;
+  border: 3px solid white;
   img {
   max-width: 320px;
   max-height: 180px;
@@ -246,6 +259,59 @@ button:hover {
   height: auto;
   object-fit: cover;
   }
+  h3 {
+    color: var(--ultramarine);
+    font-weight:bolder;
+  }
+}
+
+.image-buttons {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 4rem; 
+  padding: 2rem;
+}
+
+.image-buttons-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.game-info {
+  background-color: var(--dark-grey);
+  margin: 0 4rem; 
+  padding: 2rem;
+  border: 2px solid white;
+}
+
+.select {
+  border-radius: 9999px;
+  font: inherit;
+  font-size: 0.85rem;
+  background-color: var(--off-white);
+  option:hover {
+    background-color: var(--dark-grey);
+    cursor: pointer;
+  }
+}
+.select:hover {
+  cursor: pointer;
+}
+
+.my-games {
+  display: flex;
+  align-items: flex-start; 
+}
+
+.filter-column {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border: 2px solid white;
+  padding: 1rem 4rem;
+  margin-right: 2rem;
+  gap: 1rem;
 }
 
 .add-title {
@@ -264,3 +330,31 @@ button:hover {
   }
 }
 
+.edit {
+  height: 0.25rem;
+  width: auto;
+}
+
+.__edit__ {
+  color: var(--sky-blue);
+}
+
+.__delete__ {
+  color: var(--bright-pink);
+}
+
+footer {
+  margin-top: 2rem;
+  gap: 2rem;
+  padding: 0.5rem;
+  justify-content: center;
+  border: 2px solid white;
+  a {
+    text-decoration: none;
+    color: inherit;     
+    }
+ a:hover {
+    color: var(--light-grey);
+    font-weight: bolder;
+    }
+}

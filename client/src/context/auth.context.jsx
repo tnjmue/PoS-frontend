@@ -3,6 +3,7 @@ import API from '../api';
 
 const AuthContext = createContext();
 
+
 function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);

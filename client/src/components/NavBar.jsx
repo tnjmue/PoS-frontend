@@ -1,13 +1,19 @@
 // attribute controller icon author: <a href="https://www.flaticon.com/free-icons/pixelated" title="pixelated icons">Pixelated icons created by Miguel C Balandrano - Flaticon</a>
 // heart icon: <a href="https://www.flaticon.com/free-icons/bisexual" title="bisexual icons">Bisexual icons created by frelayasia - Flaticon</a>
 // "next" arrow icon: <a href="https://www.flaticon.com/free-icons/pixel" title="pixel icons">Pixel icons created by Taufik Ramadhan - Flaticon</a>git 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 export default function NavBar() {
     
     const {isLoggedIn, user, logOutUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logOutUser();
+        navigate("/");
+    }
 
     return (
     <>
@@ -15,7 +21,7 @@ export default function NavBar() {
     <nav className="navbar">
        <ul className="navbar-links ">
 
-            <li><NavLink to="/browse">Browse Games</NavLink></li>
+            {/* <li><NavLink to="/browse">Browse Games</NavLink></li> */}
 
             <li><NavLink to="/allgames">All Games</NavLink></li>
 
@@ -32,7 +38,7 @@ export default function NavBar() {
             )}
 
             {isLoggedIn && (
-            <li><a href="#" onClick={() => logOutUser()}>Log Out</a></li>)}
+            <li><a href="#" onClick={handleLogout}>Log Out</a></li>)}
 
             {!isLoggedIn && (
             <li><NavLink to="/signup">Sign Up</NavLink></li>

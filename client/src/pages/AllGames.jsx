@@ -1,8 +1,10 @@
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import GameCard from '../components/GameCard';
 import { useState, useEffect } from 'react';
 import API from '../api';
-import GameCard from '../components/GameCard';
+
 
 export default function AllGames() {
     
@@ -28,7 +30,8 @@ export default function AllGames() {
         })}
     </section>
     </div>
-
+    
+    <Footer />
     </>
     )
 }

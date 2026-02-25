@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { AuthContext } from "../context/auth.context";
 import { useNavigate, Link } from 'react-router-dom';
+import Header from '../components/Header';
 import API from '../api';
 
 export default function LogIn(props) {
@@ -22,7 +23,7 @@ export default function LogIn(props) {
             console.log('JWT token', response.data.authToken );
             storeToken(response.data.authToken); 
             authenticateUser(); 
-            navigate("/browse");
+            navigate("/mygames");
         })
         .catch(error => setErrorMessage(error.response.data.message))
     };
@@ -30,6 +31,10 @@ export default function LogIn(props) {
     
     return (
     <div>
+
+        <Header />
+        <hr />
+
         <h1 className="header-font">Log In</h1>
 
         <div className="form-page">
@@ -57,9 +62,9 @@ export default function LogIn(props) {
             { errorMessage && <p className="error-message">{errorMessage}</p> }
  
             <p>Don't have an account yet?</p>
-            <span className="bottom-buttons">
+            <span className="bottom-buttons-login">
             <Link to={"/signup"}><button> Sign Up</button></Link>
-            <Link to={"/browse"}><button>Continue without Account </button></Link>
+            <Link to={"/allgames"}><button>Continue without Account </button></Link>
             </span>
         
         </div>
