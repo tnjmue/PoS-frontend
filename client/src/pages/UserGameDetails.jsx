@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import notesPen from '../assets/edit-cropped.png';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import API from '../utils/api';
@@ -62,12 +63,23 @@ export default function UserGameDetails() {
         </div>
 
         <div className="game-info">
-            <p>platform: {currentUserGame.platforms}</p>
+            <h3>GENERAL INFO</h3>
+            <p> <span>AVAILABLE ON: </span> {currentUserGame.gameId?.platforms?.join(", ")}</p>
+            <p><span>RELEASE YEAR: </span> {currentUserGame.gameId?.releaseYear}</p>
+            <p><span>AVERAGE RATING: </span> {currentUserGame.gameId?.averageRating}</p>
+            <p><span>GENRES: </span> {currentUserGame.gameId?.genres?.join(", ")}</p>
+            <p><span>DEVELOPER: </span> {currentUserGame.gameId?.developer}</p>
+            <h3>MY STATS</h3>  
+            <p><span>PLATFORM: </span> {currentUserGame.platforms}</p>
             <p>
-                personal rating: <span className="stars">{" "}
+                <span>PERSONAL RATING:</span> <span className="stars">{" "}
                 {"★".repeat(currentUserGame.personalRating)}</span> </p>
-            <p>hours played: {currentUserGame.hoursPlayed}</p>
-            <section>notes: {currentUserGame.notes}</section>
+            <p><span>HOURS PLAYED: </span> {currentUserGame.hoursPlayed}</p>
+             <p><span>
+                <img src={notesPen} alt="" />
+                MY NOTES: </span></p>
+             <hr /> 
+            <section>{currentUserGame.notes}</section>
         </div>
         
         <Footer />

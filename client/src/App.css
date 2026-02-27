@@ -329,10 +329,23 @@ button:hover {
   margin: 0 4rem; 
   padding: 2rem;
   border: 2px solid white;
+  h3 {
+    color: var(--light-grey);
+    padding-top: 0.5rem;
+  }
+  span {
+    color: var(--sky-blue);
+  }
+  img {
+    width: 3vw;
+  }
+  section {
+    padding-top: 1rem;
+  }
 }
 
 .stars {
-  color: var(--bright-pink);
+  color: var(--bright-pink) !important;
 }
 
 .select {

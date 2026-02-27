@@ -4,7 +4,7 @@
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import API from '../utils/api';
 
@@ -35,13 +35,18 @@ export default function GameDetails() {
 
     <div className="image-buttons">
         <img src={currentGame.image} alt="" />
+            <div className="image-buttons-buttons">
+                 <button>✚</button>
+                <Link to={"/browse"}><button>Back</button></Link>
+            </div>
     </div>
     
             <div className="game-info">
-                <p>Available on: {currentGame.platforms?.join(", ")}</p>
-                <p>Release Year: {currentGame.releaseYear}</p>
-                <p>Average Rating: {currentGame.averageRating}</p>
-                <p>Genres: {currentGame.genres?.join(", ")}</p>
+                <p> <span>AVAILABLE ON: </span> {currentGame.platforms?.join(", ")}</p>
+                <p><span>RELEASE YEAR: </span> {currentGame.releaseYear}</p>
+                <p><span>AVERAGE RATING: </span> {currentGame.averageRating}</p>
+                <p><span>GENRES: </span> {currentGame.genres?.join(", ")}</p>
+                <p><span>DEVELOPER: </span> {currentGame.developer}</p>
             </div>
     
     <Footer />
