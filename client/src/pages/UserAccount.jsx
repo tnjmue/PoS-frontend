@@ -9,7 +9,9 @@ export default function UserAccount() {
     <Header />
     <NavBar />
 
-    <h1>User Account</h1>
+    <h1 className="header-font" >User Account</h1>
+
+    <p> •  under construction •  </p>
 
     <Footer />
     </>

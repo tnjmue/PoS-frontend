@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { AuthContext } from "../context/auth.context";
 import { useNavigate, Link } from 'react-router-dom';
 import Header from '../components/Header';
-import API from '../api';
+import API from '../utils/api';
 
 export default function LogIn(props) {
 
@@ -22,8 +22,8 @@ export default function LogIn(props) {
         .then((response) => {
             console.log('JWT token', response.data.authToken );
             storeToken(response.data.authToken); 
-            authenticateUser(); 
-            navigate("/mygames");
+            return authenticateUser()
+        .then(() =>navigate("/mygames"));
         })
         .catch(error => setErrorMessage(error.response.data.message))
     };
@@ -38,11 +38,12 @@ export default function LogIn(props) {
         <h1 className="header-font">Log In</h1>
 
         <div className="form-page">
-            <form className="form chocolate-font" onSubmit={handleLogInSubmit}>
+            <form className="form" onSubmit={handleLogInSubmit}>
               <label>email:</label>
             <input
-                    type="text"
+                    type="email"
                     name="email"
+                    autoComplete=""
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="email address"
@@ -50,8 +51,9 @@ export default function LogIn(props) {
 
             <label>password:</label>
             <input
-                    type="text"
+                    type="password"
                     name="password"
+                    autoComplete=""
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="password"
@@ -64,7 +66,7 @@ export default function LogIn(props) {
             <p>Don't have an account yet?</p>
             <span className="bottom-buttons-login">
             <Link to={"/signup"}><button> Sign Up</button></Link>
-            <Link to={"/allgames"}><button>Continue without Account </button></Link>
+            <Link to={"/browse"}><button>Continue without Account </button></Link>
             </span>
         
         </div>

@@ -13,7 +13,6 @@ import UserGameDetails from './pages/UserGameDetails';
 import EditUserGame from './pages/EditUserGame';
 import UserAccount from './pages/UserAccount';
 import ErrorPage from './pages/ErrorPage';
-import AllGames from './pages/AllGames';
 import IsPrivate from './components/IsPrivate';
 
 
@@ -21,7 +20,7 @@ import './App.css'
 
 function App() {
 
-  const API = import.meta.env.VITE_BASE_URL;
+  /* const API = import.meta.env.VITE_BASE_URL; */
   
 
   return (
@@ -34,14 +33,13 @@ function App() {
           <Route path="/" element={<Start />} /> 
           <Route path="/browse" element={<BrowseGames />} />
           <Route path="/browse/:gameId" element={<GameDetails />} /> 
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
           <Route path="/mygames" element={ <IsPrivate> <MyGames /> </IsPrivate> } />
           <Route path="/mygames/:userGameId" element={ <IsPrivate> <UserGameDetails /> </IsPrivate> } />
           <Route path="/edit/:userGameId" element={ <IsPrivate> <EditUserGame /> </IsPrivate> } />  
           <Route path="/account" element={ <IsPrivate> <UserAccount /> </IsPrivate> } /> 
           <Route path="*" element={<ErrorPage />} /> 
-          <Route path="/allgames" element={<AllGames />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn />} />
         </Routes>
 
         

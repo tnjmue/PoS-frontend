@@ -1,9 +1,10 @@
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
+import StarRating from '../components/not-used/StarRating';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from "../context/auth.context";
-import API from '../api';
+import API from '../utils/api';
 
 export default function EditUserGame() {
 
@@ -73,8 +74,8 @@ export default function EditUserGame() {
         hoursPlayed: enter number
         notes: textarea */}
 
-            <div className="form-page">
-                <form className="form chocolate-font" onSubmit={handleSubmit}>
+            <div className="edit-page">
+                <form className="form edit-form" onSubmit={handleSubmit}>
                     <label>Platforms:</label>
                     <select name="platforms" 
                     value={formData.platforms} 
@@ -98,7 +99,7 @@ export default function EditUserGame() {
                         onChange={handleChange}
                         min="0"
                         max="5"
-                        step="0.5"
+                        step="1"
                     /> 
 
                     <label>Hours played:</label>

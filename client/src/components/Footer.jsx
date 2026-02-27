@@ -5,7 +5,7 @@ export default function Footer() {
             <div> </div>
             <div>© Tanja Mueller, 2026</div>
             <div>  • </div>
-            <a href="https://github.com/tnjmue/toxic-mushrooms" target="_blank" rel="noopener noreferrer"> view on github</a>
+            <a href="https://github.com/tnjmue/PoS-frontend" target="_blank" rel="noopener noreferrer"> view on github</a>
         </footer>
     )
 }

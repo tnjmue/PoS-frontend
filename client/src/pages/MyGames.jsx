@@ -3,7 +3,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useState, useEffect } from 'react';
 import UserGameCard from '../components/UserGameCard';
-import API from '../api';
+import API from '../utils/api';
 
 export default function MyGames() {
     
@@ -28,11 +28,11 @@ const token = localStorage.getItem("authToken");
         setFilteredGames(prev => prev.filter(game => game._id !== id));
      };
 
-    /* const handleStackUpdate = (id, newStack) => {
-        setUserGames(prev =>
-        prev.map(game => game._id === id ? { ...game, stack: newStack } : game)
-        );
-    }; */
+    const handleStackChange = (id, newStack) => {
+        setUserGames(prev => prev.map(game => game._id === id ? { ...game, stack: newStack } : game));
+        setFilteredGames(prev => prev.map(game => game._id === id ? { ...game, stack: newStack } : game));
+    };
+ 
 
     return (
     <>
@@ -47,6 +47,7 @@ const token = localStorage.getItem("authToken");
     
         <h3>Filter by stack</h3>
         <button onClick={() => setFilteredGames(userGames)}>All</button>
+        <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Uncategorized"))}>Recently added</button>
         <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Owned"))}>Owned</button>
         <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Played"))}>Played</button>
         <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Currently playing"))}>Currently Playing</button>
@@ -56,7 +57,7 @@ const token = localStorage.getItem("authToken");
     <section className="all-games">
             {filteredGames.map((userGame) => {
                 return (
-                    <UserGameCard key={userGame._id} userGame={userGame} onDelete={handleDelete}/>
+                    <UserGameCard key={userGame._id} userGame={userGame} onDelete={handleDelete} onStackChange={handleStackChange} />
                 )
             })}
         </section>

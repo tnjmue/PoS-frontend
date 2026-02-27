@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import API from '../api';
+import API from '../utils/api';
 
 export default function GameDetails() {
     

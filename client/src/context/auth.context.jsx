@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import API from '../api';
+import API from "../utils/api";
 
 const AuthContext = createContext();
 
@@ -14,20 +14,21 @@ function AuthProviderWrapper(props) {
     }
   
     const authenticateUser = () => {
-        const storedToken = localStorage.getItem('authToken');
+      /* setIsLoading(true); */
+      const storedToken = localStorage.getItem('authToken');
 
         if (storedToken) {
-            API.get("/auth/verify", { headers: { Authorization: `Bearer ${storedToken}`} } )
+            return API.get("/auth/verify", { headers: { Authorization: `Bearer ${storedToken}`} } )
             .then((response) => {
-                const user = response.data;
                 setIsLoggedIn(true);
                 setIsLoading(false);
-                setUser(user);
+                setUser(response.data);
             })
             .catch((error) => {
             setIsLoggedIn(false);
             setIsLoading(false);
             setUser(null);
+            throw error;
             });
 
         } else {

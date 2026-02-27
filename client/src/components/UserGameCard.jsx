@@ -3,9 +3,9 @@ import { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import editButton from "../assets/edit-button.png";
-import API from "../api";
+import API from "../utils/api";
 
-export default function UserGameCard({userGame, onDelete}) {
+export default function UserGameCard({userGame, onDelete, onStackChange}) {
     const { isLoggedIn } = useContext(AuthContext);
     const [stack, setStack] = useState(userGame.stack);
     const navigate = useNavigate();
@@ -57,6 +57,7 @@ export default function UserGameCard({userGame, onDelete}) {
             )
             .then(() => {
                 console.log("stack updated to", newStack);
+                if (onStackChange) onStackChange(userGame._id, newStack);
                 })
             .catch(err => console.error(err));
     };

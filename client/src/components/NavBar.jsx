@@ -12,7 +12,6 @@ export default function NavBar() {
 
     const handleLogout = () => {
         logOutUser();
-        navigate("/");
     }
 
     return (
@@ -21,16 +20,14 @@ export default function NavBar() {
     <nav className="navbar">
        <ul className="navbar-links ">
 
-            {/* <li><NavLink to="/browse">Browse Games</NavLink></li> */}
-
-            <li><NavLink to="/allgames">All Games</NavLink></li>
+            <li><NavLink to="/browse">Browse</NavLink></li>
 
             
-                <li><NavLink to="/mygames">My Games</NavLink></li>
+            <li><NavLink to="/mygames">My Games</NavLink></li>
     
 
             {isLoggedIn && (
-                <li><NavLink to="/account">My Account</NavLink></li>
+            <li><NavLink to="/account">My Account</NavLink></li>
             )}
 
             {!isLoggedIn && (
@@ -43,8 +40,8 @@ export default function NavBar() {
             {!isLoggedIn && (
             <li><NavLink to="/signup">Sign Up</NavLink></li>
             )}
-        </ul> 
-       
+
+        </ul>   
     </nav>
     
     </>

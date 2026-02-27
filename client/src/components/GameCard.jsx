@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
-import API from "../api";
+import API from "../utils/api";
 
 export default function GameCard({game}) {
     const { isLoggedIn } = useContext(AuthContext);
@@ -70,13 +70,13 @@ export default function GameCard({game}) {
     
     <div className="game-card">
         <Link to={`/browse/${game._id}`}><img src={game.image} alt="" /></Link>
-        <div className="add-title">
+        <div className="add-game">
             <h3>{game.title}</h3>
 
             {!isAdded ? (
-            <button onClick={ handleAdd }> + </button>
+            <button onClick={ handleAdd }> ✚ </button>
             ) : (
-            <button /* onClick={openSelect} */> ✓ </button> 
+            <button /* onClick={openSelect} */> ✔ </button> 
             )}
 
            {/* {showSelect && ( 

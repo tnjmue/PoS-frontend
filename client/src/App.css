@@ -1,21 +1,12 @@
 :root {
-  --dark-grey: rgb(116, 127, 167);
-  --light-grey: rgb(160, 169, 201);
-  --off-white: rgb(190, 201, 243);
+  --dark-grey: rgb(40, 42, 52);
+  --light-grey: rgb(138, 148, 183);
+  --off-white: rgb(218, 226, 255);
   --bright-pink: rgb(227, 62, 144);
   --darker-pink: rgb(165, 44, 104);
-  --light-violet: rgb(162, 145, 223);
-  --dark-violet: rgb(35, 17, 67);
   --sky-blue: rgb(70, 106, 216);
-  --ultramarine: rgb(27, 53, 133);
-  --turquoise: turquoise;
+  --ultramarine: rgb(1, 31, 112);
 }
-
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
 
 html, body {
   margin: 0;
@@ -47,42 +38,22 @@ main {
 button {
   background-color: var(--bright-pink);
   border: none;
-  border-radius: 9999px;
+  border-radius: 2rem;
   padding: 0.5rem 1rem;
-  color: var(--sky-blue);
+  color: white;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-.start {
-  display: flex;
-  min-height: 100vh;
-}
-
-.start-left {
-  display: flex;
-  flex-direction: column;
-  section {
-    background-color: black;
-    color: white;
-    padding: 1rem;
-    margin-left: 10rem;
-    margin-top: 0;
-    border: 2px solid white;
-    max-width: 70%;
-  }
-
-}
-
 .start-header {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  padding-left: 3rem;
   padding-top: 5rem;
-  gap: 1rem;
   img {
-    height: 30%;
+    height: 15vh;
   }
   h1 {
   margin: 0;
@@ -90,8 +61,28 @@ button:hover {
   }
 }
 
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.start-left {
+  display: flex;
+  flex-direction: column;
+  p {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    margin-top: 5rem;
+    border: 2px solid white;
+    max-width: 70%;
+  }
+
+}
+
 .start-buttons {
-  margin-top: 12rem;
+  margin-top: 2rem;
   p {
     margin-top: 2rem;
     font-weight: bolder;
@@ -102,13 +93,6 @@ button:hover {
   button:focus {
     color: var(--off-white);
   }
-}
-
-.chocolate-font {
-  font-family: "Chocolate Classical Sans", sans-serif;
-  font-weight: 800;
-  font-style:normal;
-  color: white;
 }
 
 .header-box {
@@ -129,7 +113,7 @@ button:hover {
   padding-left: 1rem;
   gap: 1rem;
   img {
-    height: 10vh;
+    height: 8vh;
     width: auto;
   }
   h1 {
@@ -148,10 +132,13 @@ button:hover {
   font-weight: 400;
   font-style: normal;
   color: var(--bright-pink);
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-top: 0;
   padding: 2rem;
   text-align: center;
+  span {
+    color: rgb(255, 157, 0);
+  }
 }
 
 .navbar {
@@ -187,7 +174,6 @@ button:hover {
   }
 }
 
-
 .form-page {
   display: flex;
   flex-direction: column;
@@ -207,36 +193,71 @@ button:hover {
   gap: 1rem;
   margin-bottom: 2rem;
   input {
-    background-color: var(--light-grey);
-    border: none;
-    border-radius: 9999px;
-    box-shadow: 0 0 8px var(--powder-blue);
+    background-color: var(--off-white);
+    outline: none; 
+    border-radius: 2rem;
+    box-shadow: 0 0 8px var(--sky-blue);
     padding: 0.5rem;
   }
+  input:hover {
+    box-shadow: 0 0 10px var(--bright-pink);
+  }
+  input:focus {
+    background-color: white;
+    border-color: var(--bright-pink);
+  }
   button:hover {
-    box-shadow: 0 0 10px var(--ultramarine);
+    box-shadow: 0 0 10px var(--sky-blue);
   }
   button:focus {
   color: var(--ultramarine);
+  }
 }
-textarea {
-  background-color: var(--off-white);
-  border-radius: 10px;
-  width: 80%;
-  padding: 0.5rem;
-  box-sizing: border-box;
+
+.edit-page {
+  margin-left: 10rem;
 }
+
+.edit-form {
+  input {
+    width: 10%;
+  }
+  textarea {
+    width: 70%;
+    background-color: var(--off-white);
+    border-radius: 0.75rem;
+    outline: none; 
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 0.90rem;
+  }
+  textarea:hover {
+    box-shadow: 0 0 10px var(--bright-pink);
+  }
+  textarea:focus {
+    background-color: white;
+    border-color: var(--bright-pink);
+  }
 }
 
 .bottom-buttons-login {
   display: flex;
   gap: 1rem;
+  button {
+    color: var(--bright-pink);
+    background-color: var(--sky-blue);
+  }
 }
 
 .bottom-buttons-signup {
   display: flex;
   gap: 1rem;
   align-items: center;
+  button {
+    color: var(--bright-pink);
+    background-color: var(--sky-blue);
+  }
 }
 
 .all-games {
@@ -245,22 +266,47 @@ textarea {
   gap: 1rem;
 }
 
+
+.browse-bars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 1rem;
+
+}
+
+.search-bar {
+  border-radius: 2rem;
+  font: inherit;
+  background-color: var(--off-white);
+  outline: none;
+  padding: 0.5rem;
+}
+  .search-bar:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--bright-pink);
+  }
+
+  .search-bar:focus {
+    border-color: var(--bright-pink);
+    background-color: white;
+  }
+
+
 .game-card {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   background-color: var(--dark-grey);
-  color: black;
+  color: white;
   border: 3px solid white;
   img {
-  max-width: 320px;
+  max-width: 300px;
   max-height: 180px;
-  width: 100%;
-  height: auto;
   object-fit: cover;
   }
   h3 {
-    color: var(--ultramarine);
+    color: white;
     font-weight:bolder;
   }
 }
@@ -285,18 +331,25 @@ textarea {
   border: 2px solid white;
 }
 
+.stars {
+  color: var(--bright-pink);
+}
+
 .select {
-  border-radius: 9999px;
+  border-radius: 2rem;
   font: inherit;
   font-size: 0.85rem;
+  padding: 0.5rem;
   background-color: var(--off-white);
-  option:hover {
-    background-color: var(--dark-grey);
-    cursor: pointer;
-  }
 }
 .select:hover {
   cursor: pointer;
+  box-shadow: 0 0 5px var(--bright-pink);
+  background-color: white;
+}
+
+.select:focus {
+  border-color: var(--bright-pink);
 }
 
 .my-games {
@@ -314,7 +367,7 @@ textarea {
   gap: 1rem;
 }
 
-.add-title {
+.add-game {
   display: flex;
   gap: 3rem;
   
@@ -325,8 +378,7 @@ textarea {
   padding: 0;
   font: inherit;
   color: var(--bright-pink);
-  font-weight:bolder;
-  font-size: 2rem;
+  font-size: 1.5rem;
   }
 }
 
@@ -341,6 +393,32 @@ textarea {
 
 .__delete__ {
   color: var(--bright-pink);
+}
+
+.error-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: auto;
+    height: 15vh;
+    margin-top: 2rem;
+  }
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 0; 
+    padding-bottom: 0;
+  }
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 30%;
+  }
 }
 
 footer {
@@ -358,3 +436,44 @@ footer {
     font-weight: bolder;
     }
 }
+
+
+
+/* for reference */
+
+/* title font */
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* regular font */
+.chocolate-font {
+  font-family: "Chocolate Classical Sans", sans-serif;
+  font-weight: 800;
+  font-style:normal;
+  color: white;
+}
+
+
+
+/* styles for unfinished star rating component */
+
+/* .star {
+  cursor: pointer;
+  color: var(--light-grey);
+}
+
+.star-active {
+  color: var(--bright-pink);
+} */
+
+
+/* figure this out: */
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
