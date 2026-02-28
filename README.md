@@ -14,7 +14,7 @@ Icons I used are from here: https://www.flaticon.com/free-icons/pixelated/
 
 Pile of Shame is a video game logging platform inspired by Goodreads - but make it games!
 
-I also took inspiration (and stole the title) from this (German) YouTube video: https://www.youtube.com/watch?v=XGkXN4L6PlI in which a Gamer who makes journalism-type content laments her count of over 300 unplayed, uninstalled games in her Steam library and what she wants to do about it. She made a whole Excel spreadsheet to help her get an overview of the games she owns and plan out her gaming activity more consciously instead of blindly buying new games on sale. 
+I also took inspiration (and stole the title) from this (German) YouTube video: https://www.youtube.com/watch?v=XGkXN4L6PlI in which a gamer who makes journalism-type content laments her count of over 300 unplayed, uninstalled games in her Steam library and goes over what she wants to do about it. She made a whole Excel spreadsheet to help her get an overview of the games she owns and plan out her gaming activity more consciously instead of blindly buying new games on sale. 
 
 Since Excel is not my thing, I thought I'd build something a little more interactive and visually entertaining to essentially do what she sets out to do:
 Keep an overview of which games you are playing across platforms and jot down your thoughts about them all in one place without being distracted by other people's thoughts or ratings or GOTY awards or end lists or (potentially misleading) trailers to sway you. 
