@@ -1,7 +1,6 @@
-import { useState, useContext, useEffect } from "react";
-import { useParams, useNavigate; Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import editButton from "../assets/edit-button.png";
 import API from "../utils/api";
 
 export default function UserGameCard({userGame, onDelete, onStackChange}) {
