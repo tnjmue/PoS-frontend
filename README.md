@@ -2,15 +2,18 @@
 
 ### *Frontend repository*
 
-**Backend:** https://github.com/tnjmue/PoS-backend
+Backend deployed on **Render**  
+Database hosted on **MongoDB Atlas**  
+Frontend deployed on **Netlify**
+
+**Backend folder:** https://github.com/tnjmue/PoS-backend
 
 **Live Demo:** https://pile-of-shame-games.netlify.app/
 
 Icons I used are from here: https://www.flaticon.com/free-icons/pixelated/
 
 
-
-## 𖡊 the idea behind the project 
+## 𖡊 the idea behind the project: 
 
 Pile of Shame is a video game logging platform inspired by Goodreads - but make it games!
 
@@ -21,7 +24,7 @@ Keep an overview of which games you are playing across platforms and jot down yo
 
 
 
-## ⟳ what it is right now
+## ⟳ what it is right now:
 
 ...a humble draft. You can:
 
@@ -33,7 +36,7 @@ Keep an overview of which games you are playing across platforms and jot down yo
 
 
 
-## ⌨ built with
+## ⌨ built with:
 
 - React
 - React Router
@@ -48,7 +51,7 @@ Keep an overview of which games you are playing across platforms and jot down yo
 - Node.js installed
 - npm or yarn
 
-## installation
+### installation
 1. Clone the repo
 ```
    git clone https://github.com/tnjmue/PoS-frontend.git
@@ -63,7 +66,7 @@ Keep an overview of which games you are playing across platforms and jot down yo
 ```
 4. Create a `.env` file in the client folder with:
 ```
-   VITE_BASE_URL="https://pile-of-shame-games.netlify.app"
+   VITE_BASE_URL="https://pile-of-shame.onrender.com"
 ```
 5. Run the development server
 ```
@@ -72,7 +75,7 @@ Keep an overview of which games you are playing across platforms and jot down yo
 
 ---
 
-## ✈︎ what's next
+## ✈︎ what's next:
 - user profile functionalities: delete account, reset password, change username, upload profile picture
 - integration with RAWG API for real game data
 - enable uploading and saving screenshots via Cloudinary
@@ -80,6 +83,5 @@ Keep an overview of which games you are playing across platforms and jot down yo
 - enable custom tags in addition to the default stacks, such as: cute graphics, great soundtrack etc
 - scale for mobile
 
----
 
 
