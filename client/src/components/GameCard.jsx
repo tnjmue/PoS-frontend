@@ -69,32 +69,36 @@ export default function GameCard({game}) {
         
     
     return (
-    <>
+
+        <>
     
-    <div className="game-card">
-        <Link to={`/browse/${game._id}`}><img src={game.image} alt="" /></Link>
-        <div className="add-game">
-            <h3>{game.title}</h3>
+            <div className="game-card">
 
-            {!isAdded ? (
-            <button onClick={ handleAdd }> ✚ </button>
-            ) : (
-            <button /* onClick={openSelect} */> ✔ </button> 
-            )}
+                <Link to={`/browse/${game._id}`}><img src={game.image} alt="" /></Link>
 
-           {/* {showSelect && ( 
-            <select onChange={handleSelect} autoFocus defaultValue="">
-            <option value="" disabled>Add to stack</option>
-            <option value="Want to play">Want to play</option>
-            <option value="Owned">Owned</option>
-            <option value="Currently playing">Currently playing</option>
-            <option value="Played">Played</option>
-            </select>     
-            )} */}
+                <div className="add-game">
+                    <h3>{game.title}</h3>
+
+                    {!isAdded ? (
+                        <button onClick={ handleAdd }> ✚ </button>
+                        ) : (
+                        <button /* onClick={openSelect} */> ✔ </button> 
+                    )}
+
+                    {/* {showSelect && ( 
+                        <select onChange={handleSelect} autoFocus defaultValue="">
+                            <option value="" disabled>Add to stack</option>
+                            <option value="Want to play">Want to play</option>
+                            <option value="Owned">Owned</option>
+                            <option value="Currently playing">Currently playing</option>
+                            <option value="Played">Played</option>
+                        </select>     
+                    )} */}
             
-            
+                </div>
             </div>
-    </div>
-    </>
+
+        </>
+
     )
 }

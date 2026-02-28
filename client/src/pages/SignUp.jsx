@@ -22,62 +22,64 @@ export default function SignUp(props) {
     }
     
     return (
-    <> 
 
-        <Header />
-        <hr />
+        <> 
 
-        <h1 className="header-font">Sign Up</h1>
+            <Header />
+            <hr />
 
-        <div className="form-page">
+            <h1 className="header-font">Sign Up</h1>
 
-            <form className="form" onSubmit={handleSignUpSubmit}>
-                <label>name:</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="username"
-                    required
-                />
+            <div className="form-page">
+
+                <form className="form" onSubmit={handleSignUpSubmit}>
+                    <label>name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="username"
+                        required
+                    />
                
-                <label>email:</label>
-                <input
-                    type="text"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="email address"
-                />
+                    <label>email:</label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="email address"
+                    />
 
-                <label>password:</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="password"
-                />
+                    <label>password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="password"
+                    />
 
-                <button type="submit">Sign Up</button>
-            </form>
+                    <button type="submit">Sign Up</button>
+                </form>
 
-            { errorMessage && <p className="error-message">{errorMessage}</p> }
+                { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-            <div className="bottom-buttons-signup">
-                <span>
-                    <p>Already have an account?</p>
-                    <Link to={"/login"}> <button>Log In</button></Link>
-                </span>
-                <span>
-                    <p>Don't want to commit?</p>
-                    <Link to={"/browse"}><button>Continue without Account </button></Link>
-                </span>
+                <div className="bottom-buttons-signup">
+                    <span>
+                        <p>Already have an account?</p>
+                        <Link to={"/login"}> <button>Log In</button></Link>
+                    </span>
+                    <span>
+                        <p>Don't want to commit?</p>
+                        <Link to={"/browse"}><button>Continue without Account </button></Link>
+                    </span>
+                </div>
+            
             </div>
             
-        </div>
-    </>
+        </>
     
     )
 }

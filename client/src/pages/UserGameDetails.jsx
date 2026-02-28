@@ -1,9 +1,9 @@
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import notesPen from '../assets/edit-cropped.png';
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import API from '../utils/api';
 
 export default function UserGameDetails() {
@@ -46,48 +46,50 @@ export default function UserGameDetails() {
 
 
     return (
+
         <>
     
-        <Header />
-        <NavBar />
+            <Header />
+            <NavBar />
 
-        <h1 className="header-font">{currentUserGame.gameId?.title}</h1>
+            <h1 className="header-font">{currentUserGame.gameId?.title}</h1>
 
-        <div className="details-page">
+            <div className="details-page">
 
-            <div className="image-buttons">
-                <img src={currentUserGame.gameId?.image} alt="" />
-                <div className="image-buttons-buttons">
-                    <Link to={`/edit/${userGameId}`}><button>Edit</button></Link>
-                    <button onClick={handleDelete}>Delete</button>
-                    <Link to={"/mygames"}><button>Back</button></Link>
+                <div className="image-buttons">
+                    <img src={currentUserGame.gameId?.image} alt="" />
+                    <div className="image-buttons-buttons">
+                        <Link to={`/edit/${userGameId}`}><button>Edit</button></Link>
+                        <button onClick={handleDelete}>Delete</button>
+                        <Link to={"/mygames"}><button>Back</button></Link>
+                    </div>
+                </div>
+
+                <div className="game-info">
+                    <h3>GENERAL INFO</h3>
+                    <p> <span>AVAILABLE ON: </span> {currentUserGame.gameId?.platforms?.join(", ")}</p>
+                    <p><span>RELEASE YEAR: </span> {currentUserGame.gameId?.releaseYear}</p>
+                    <p><span>AVERAGE RATING: </span> {currentUserGame.gameId?.averageRating}</p>
+                    <p><span>GENRES: </span> {currentUserGame.gameId?.genres?.join(", ")}</p>
+                    <p><span>DEVELOPER: </span> {currentUserGame.gameId?.developer}</p>
+                    <h3>MY STATS</h3>  
+                    <p><span>PLATFORM: </span> {currentUserGame.platforms}</p>
+                    <p>
+                        <span>PERSONAL RATING:</span> <span className="stars">{" "}
+                        {"★".repeat(currentUserGame.personalRating)}</span> 
+                    </p>
+                    <p><span>HOURS PLAYED: </span> {currentUserGame.hoursPlayed}</p>
+                    <p><span>
+                        <img src={notesPen} alt="" />MY NOTES: 
+                    </span></p>
+                    <hr /> 
+                    <section>{currentUserGame.notes}</section>
                 </div>
             </div>
-
-            <div className="game-info">
-                <h3>GENERAL INFO</h3>
-                <p> <span>AVAILABLE ON: </span> {currentUserGame.gameId?.platforms?.join(", ")}</p>
-                <p><span>RELEASE YEAR: </span> {currentUserGame.gameId?.releaseYear}</p>
-                <p><span>AVERAGE RATING: </span> {currentUserGame.gameId?.averageRating}</p>
-                <p><span>GENRES: </span> {currentUserGame.gameId?.genres?.join(", ")}</p>
-                <p><span>DEVELOPER: </span> {currentUserGame.gameId?.developer}</p>
-                <h3>MY STATS</h3>  
-                <p><span>PLATFORM: </span> {currentUserGame.platforms}</p>
-                <p>
-                    <span>PERSONAL RATING:</span> <span className="stars">{" "}
-                    {"★".repeat(currentUserGame.personalRating)}</span> 
-                </p>
-                <p><span>HOURS PLAYED: </span> {currentUserGame.hoursPlayed}</p>
-                <p><span>
-                    <img src={notesPen} alt="" />MY NOTES: 
-                </span></p>
-                 <hr /> 
-                <section>{currentUserGame.notes}</section>
-            </div>
-        </div>
         
-        <Footer />
+            <Footer />
 
         </>
-        )
+
+    )
 }

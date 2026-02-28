@@ -5,15 +5,19 @@ import Footer from '../components/Footer';
 export default function UserAccount() {
     
     return (
-    <>
-    <Header />
-    <NavBar />
 
-    <h1 className="header-font" >User Account</h1>
+        <>
 
-    <p> •  under construction •  </p>
+            <Header />
+            <NavBar />
 
-    <Footer />
-    </>
+            <h1 className="header-font" >User Account</h1>
+
+            <p> •  under construction •  </p>
+
+            <Footer />
+
+        </>
+        
     )
 }

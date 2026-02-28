@@ -30,47 +30,50 @@ export default function LogIn(props) {
     
     
     return (
-    <>
 
-        <Header />
-        <hr />
+        <>
 
-        <h1 className="header-font">Log In</h1>
+            <Header />
+            <hr />
 
-        <div className="form-page">
-            <form className="form" onSubmit={handleLogInSubmit}>
-                <label>email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    autoComplete=""
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="email address"
-                />
+            <h1 className="header-font">Log In</h1>
 
-                <label>password:</label>
-                <input
-                    type="password"
-                    name="password"
-                    autoComplete=""
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="password"
-                />
+            <div className="form-page">
+                <form className="form" onSubmit={handleLogInSubmit}>
+                    <label>email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        autoComplete=""
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="email address"
+                    />
+
+                    <label>password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        autoComplete=""
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="password"
+                    />
                  
-                <button type="submit">Log In</button>
-            </form>
+                    <button type="submit">Log In</button>
+                </form>
 
-            { errorMessage && <p className="error-message">{errorMessage}</p> }
+                { errorMessage && <p className="error-message">{errorMessage}</p> }
  
-            <p>Don't have an account yet?</p>
-            <span className="bottom-buttons-login">
-                <Link to={"/signup"}><button> Sign Up</button></Link>
-                <Link to={"/browse"}><button>Continue without Account </button></Link>
-            </span>
+                <p>Don't have an account yet?</p>
+                <span className="bottom-buttons-login">
+                    <Link to={"/signup"}><button> Sign Up</button></Link>
+                    <Link to={"/browse"}><button>Continue without Account </button></Link>
+                </span>
         
-        </div>
-    </>
+            </div>
+        </>
+        
+
     )
 }

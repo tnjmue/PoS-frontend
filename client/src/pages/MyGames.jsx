@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import { useState, useEffect } from 'react';
 import UserGameCard from '../components/UserGameCard';
 import API from '../utils/api';
 
@@ -35,36 +35,39 @@ const token = localStorage.getItem("authToken");
  
 
     return (
-    <>
-    <Header />
-    <NavBar />
+
+        <>
+            <Header />
+            <NavBar />
     
-    <h1 className="header-font">My Games</h1>
+            <h1 className="header-font">My Games</h1>
 
-    <div className="my-games">
+            <div className="my-games">
 
-        <aside className="filter-column">
-            <h3>Filter by stack</h3>
-            <hr />
-            <button onClick={() => setFilteredGames(userGames)}>All</button>
-            <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Uncategorized"))}>Recently added</button>
-            <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Owned"))}>Owned</button>
-            <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Played"))}>Played</button>
-            <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Currently playing"))}>Currently Playing</button>
-            <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Want to play"))}>Want to Play</button>
-        </aside>  
+                <aside className="filter-column">
+                    <h3>Filter by stack</h3>
+                    <hr />
+                    <button onClick={() => setFilteredGames(userGames)}>All</button>
+                    <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Uncategorized"))}>Recently added</button>
+                    <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Owned"))}>Owned</button>
+                    <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Played"))}>Played</button>
+                    <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Currently playing"))}>Currently Playing</button>
+                    <button onClick={() => setFilteredGames(userGames.filter(g => g.stack === "Want to play"))}>Want to Play</button>
+                </aside>  
 
-        <section className="all-games">
-            {filteredGames.map((userGame) => {
-                return (
-                    <UserGameCard key={userGame._id} userGame={userGame} onDelete={handleDelete} onStackChange={handleStackChange} />
-                )
-            })}
-        </section>
+                <section className="all-games">
+                    {filteredGames.map((userGame) => {
+                        return (
+                            <UserGameCard key={userGame._id} userGame={userGame} onDelete={handleDelete} onStackChange={handleStackChange} />
+                        )
+                    })}
+                </section>
 
-    </div>
+            </div>
     
-    <Footer />
-    </>
+            <Footer />
+
+        </>
+        
     )
 }

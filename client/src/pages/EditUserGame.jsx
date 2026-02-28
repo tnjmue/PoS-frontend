@@ -1,9 +1,8 @@
-import Header from '../components/Header';
-import NavBar from '../components/NavBar';
-import StarRating from '../components/not-used/StarRating';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from "../context/auth.context";
+import Header from '../components/Header';
+import NavBar from '../components/NavBar';
 import API from '../utils/api';
 
 export default function EditUserGame() {
@@ -53,11 +52,11 @@ export default function EditUserGame() {
         API.put(`/api/userGames/${userGameId}`, formData, {
         headers: { Authorization: `Bearer ${token}` }
         })
-      .then(() => {
-        console.log("User game updated:", formData);
-        navigate(`/mygames/${userGameId}`); // go back to My Games page
-      })
-      .catch(err => console.error(err));
+        .then(() => {
+            console.log("User game updated:", formData);
+            navigate(`/mygames/${userGameId}`); 
+         })
+        .catch(err => console.error(err));
   };
 
     return (
@@ -68,11 +67,6 @@ export default function EditUserGame() {
 
             <h1 className="header-font">Edit Game</h1>
 
-            
-        {/* platforms: drop down select
-        personalRating: 5 stars
-        hoursPlayed: enter number
-        notes: textarea */}
 
             <div className="edit-page">
                 <form className="form edit-form" onSubmit={handleSubmit}>
@@ -123,7 +117,7 @@ export default function EditUserGame() {
                     </Link>
 
                 </form>
-        </div>
+            </div>
 
 
         </>
