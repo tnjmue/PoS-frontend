@@ -53,36 +53,41 @@ export default function UserGameDetails() {
 
         <h1 className="header-font">{currentUserGame.gameId?.title}</h1>
 
-        <div className="image-buttons">
-            <img src={currentUserGame.gameId?.image} alt="" />
-            <div className="image-buttons-buttons">
-                <Link to={`/edit/${userGameId}`}><button>Edit</button></Link>
-                 <button onClick={handleDelete}>Delete</button>
-                <Link to={"/mygames"}><button>Back</button></Link>
-            </div>
-        </div>
+        <div className="details-page">
 
-        <div className="game-info">
-            <h3>GENERAL INFO</h3>
-            <p> <span>AVAILABLE ON: </span> {currentUserGame.gameId?.platforms?.join(", ")}</p>
-            <p><span>RELEASE YEAR: </span> {currentUserGame.gameId?.releaseYear}</p>
-            <p><span>AVERAGE RATING: </span> {currentUserGame.gameId?.averageRating}</p>
-            <p><span>GENRES: </span> {currentUserGame.gameId?.genres?.join(", ")}</p>
-            <p><span>DEVELOPER: </span> {currentUserGame.gameId?.developer}</p>
-            <h3>MY STATS</h3>  
-            <p><span>PLATFORM: </span> {currentUserGame.platforms}</p>
-            <p>
-                <span>PERSONAL RATING:</span> <span className="stars">{" "}
-                {"★".repeat(currentUserGame.personalRating)}</span> </p>
-            <p><span>HOURS PLAYED: </span> {currentUserGame.hoursPlayed}</p>
-             <p><span>
-                <img src={notesPen} alt="" />
-                MY NOTES: </span></p>
-             <hr /> 
-            <section>{currentUserGame.notes}</section>
+            <div className="image-buttons">
+                <img src={currentUserGame.gameId?.image} alt="" />
+                <div className="image-buttons-buttons">
+                    <Link to={`/edit/${userGameId}`}><button>Edit</button></Link>
+                    <button onClick={handleDelete}>Delete</button>
+                    <Link to={"/mygames"}><button>Back</button></Link>
+                </div>
+            </div>
+
+            <div className="game-info">
+                <h3>GENERAL INFO</h3>
+                <p> <span>AVAILABLE ON: </span> {currentUserGame.gameId?.platforms?.join(", ")}</p>
+                <p><span>RELEASE YEAR: </span> {currentUserGame.gameId?.releaseYear}</p>
+                <p><span>AVERAGE RATING: </span> {currentUserGame.gameId?.averageRating}</p>
+                <p><span>GENRES: </span> {currentUserGame.gameId?.genres?.join(", ")}</p>
+                <p><span>DEVELOPER: </span> {currentUserGame.gameId?.developer}</p>
+                <h3>MY STATS</h3>  
+                <p><span>PLATFORM: </span> {currentUserGame.platforms}</p>
+                <p>
+                    <span>PERSONAL RATING:</span> <span className="stars">{" "}
+                    {"★".repeat(currentUserGame.personalRating)}</span> 
+                </p>
+                <p><span>HOURS PLAYED: </span> {currentUserGame.hoursPlayed}</p>
+                <p><span>
+                    <img src={notesPen} alt="" />MY NOTES: 
+                </span></p>
+                 <hr /> 
+                <section>{currentUserGame.notes}</section>
+            </div>
         </div>
         
         <Footer />
+
         </>
         )
 }

@@ -21,18 +21,17 @@ export default function Start() {
                 </p>
             </div>
 
-        <div className="start-buttons">
-            <p>Want to try us out?</p>
-            <Link to={"/signup"}><button> Sign Up</button></Link>
+            <div className="start-buttons">
+                <p>Want to try us out?</p>
+                <Link to={"/signup"}><button> Sign Up</button></Link>
 
-            <p>Already have account?</p>
-            <Link to={"/login"}> <button>Log In</button></Link>
+                <p>Already have account?</p>
+                <Link to={"/login"}> <button>Log In</button></Link>
 
-            <p>Sneak Peak with no strings attached?</p>
-            <Link to={"/browse"}><button>Continue without Account </button></Link>
+                <p>Sneak Peak with no strings attached?</p>
+                <Link to={"/browse"}><button>Continue without Account </button></Link>
+            </div>
         </div>
-
-    </div>
     </>
     )
 }

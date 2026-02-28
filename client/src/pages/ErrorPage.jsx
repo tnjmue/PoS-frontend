@@ -11,18 +11,21 @@ export default function ErrorPage() {
 
         <>
 
-            <Header />
-            <NavBar /> 
-            <span className="error-header">
-                <img src={Flash} alt="" />
-                <h1 className="header-font">GAME OVER</h1>
-            </span>
+        <Header />
+        <NavBar /> 
 
-            <div className="error-page">
-                <img src={warningSign} alt="" />
-                <h3 className="header-font"><span>404</span> Page not found</h3>
-            </div>
-            <Footer />
+        <span className="error-header">
+            <img src={Flash} alt="" />
+            <h1 className="header-font">GAME OVER</h1>
+        </span>
+
+        <div className="error-page">
+            <img src={warningSign} alt="" />
+            <h3 className="header-font"><span>404</span> Page not found</h3>
+        </div>
+
+        <Footer />
+        
         </>
     )
 }

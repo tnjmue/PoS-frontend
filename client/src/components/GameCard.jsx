@@ -42,6 +42,9 @@ export default function GameCard({game}) {
             .catch(err => console.error(err));
          };
 
+
+// still want to add drop down select menu on the game card, so you can select the stack immediately after adding it
+// instead of having it be Uncategorized per default and having to go to My Games to change it
 /*     const openSelect = () => setShowSelect(true);
 
     const handleSelect = (e) => {

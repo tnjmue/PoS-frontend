@@ -30,34 +30,30 @@ export default function GameDetails() {
 
     <Header />
     <NavBar />
+
     <h1 className="header-font">{currentGame.title}</h1>
     
+    <div className="details-page">
 
-    <div className="image-buttons">
-        <img src={currentGame.image} alt="" />
+        <div className="image-buttons">
+            <img src={currentGame.image} alt="" />
             <div className="image-buttons-buttons">
-                 <button>✚</button>
+                <button onClick={() => {alert("My functionality will be implemented in the future :)")}}>✚</button>
                 <Link to={"/browse"}><button>Back</button></Link>
             </div>
+        </div>
+    
+        <div className="game-info">
+            <p> <span>AVAILABLE ON: </span> {currentGame.platforms?.join(", ")}</p>
+            <p><span>RELEASE YEAR: </span> {currentGame.releaseYear}</p>
+            <p><span>AVERAGE RATING: </span> {currentGame.averageRating}</p>
+            <p><span>GENRES: </span> {currentGame.genres?.join(", ")}</p>
+            <p><span>DEVELOPER: </span> {currentGame.developer}</p>
+        </div>
+    
     </div>
-    
-            <div className="game-info">
-                <p> <span>AVAILABLE ON: </span> {currentGame.platforms?.join(", ")}</p>
-                <p><span>RELEASE YEAR: </span> {currentGame.releaseYear}</p>
-                <p><span>AVERAGE RATING: </span> {currentGame.averageRating}</p>
-                <p><span>GENRES: </span> {currentGame.genres?.join(", ")}</p>
-                <p><span>DEVELOPER: </span> {currentGame.developer}</p>
-            </div>
-    
+
     <Footer />
     </>
     )
 }
-
-/* title: 
-releaseYear: 
-dateAdded: 
-image: 
-averageRating:  enum: ["positive", "okay", "negative"] },
-platforms:  enum: ["PC", "PlayStation", "Xbox", "Nintendo", "Mac", "Linux", "Web"] },
-genres: enum: ["building", "card", "casual", "horror", "indie", "fighting", "MMO", "platformer", "puzzle", "RPG", "shooter", "simulation", "sports", "strategy", "survival"]} */

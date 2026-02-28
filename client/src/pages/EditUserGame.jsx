@@ -77,10 +77,7 @@ export default function EditUserGame() {
             <div className="edit-page">
                 <form className="form edit-form" onSubmit={handleSubmit}>
                     <label>Platforms:</label>
-                    <select name="platforms" 
-                    value={formData.platforms} 
-                    onChange={handleChange}
-                    className="select">
+                    <select name="platforms" value={formData.platforms} onChange={handleChange} className="select">
                         <option value="">Select platform</option>
                         <option value="PC">PC</option>
                         <option value="PlayStation">PlayStation</option>
